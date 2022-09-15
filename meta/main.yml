@@ -1,0 +1,13 @@
+dependencies: []
+galaxy_info:
+  author: Artem Hudoley
+  company: RA
+  description: Install Anydesk
+  license: MIT
+  min_ansible_version: 1.0
+  galaxy_tags:
+    - anydesk
+  platforms:
+    - name: all
+      versions:
+        - all

@@ -1,0 +1,12 @@
+- name: Install repo yum
+  copy:
+    src: "{{ ansible_distribution | lower }}.repo"
+    dest: /etc/yum.repos.d/anydesk.repo
+
+- name: Install AndyDesk
+  yum:
+    name: anydesk
+    state: present
+  ignore_errors: "{{ ansible_check_mode }}"
+
+

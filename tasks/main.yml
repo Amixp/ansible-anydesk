@@ -1,9 +1,14 @@
-- name: Install repo
-  copy:
-    src: google-chrome.repo
-    dest: /etc/yum.repos.d/google-chrome.repo
+- include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_os_family | lower }}_{{ ansible_distribution | lower }}_{{ ansible_distribution_version | lower }}.yml"
+    - "{{ ansible_os_family | lower }}_{{ ansible_distribution | lower }}.yml"
+    - "{{ ansible_distribution | lower }}_{{ ansible_distribution_release | lower }}.yml"
+    - "{{ ansible_distribution | lower }}_{{ ansible_distribution_version | lower }}.yml"
+    - "{{ ansible_distribution | lower }}.yml"
+    - "{{ ansible_os_family | lower }}.yml"
+    - "empty.yml"
 
-- name: Install browser
-  yum:
-    name: google-chrome-stable
-    state: present
+- include_tasks: "{{ item }}"
+  with_first_found:
+    - "install_{{ ansible_pkg_mgr }}.yml"
+    - "empty.yml"

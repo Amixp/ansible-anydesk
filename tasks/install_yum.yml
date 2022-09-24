@@ -1,7 +1,11 @@
 - name: Install repo yum
-  copy:
-    src: "{{ ansible_distribution | lower }}.repo"
+  template:
+    src: "{{ item }}"
     dest: /etc/yum.repos.d/anydesk.repo
+  with_first_found:
+    - "{{ ansible_distribution | lower }}_{{ ansible_distribution_release | lower }}.repo"
+    - "{{ ansible_distribution | lower }}.repo"
+    - "repo.j2"
 
 - name: Install AndyDesk
   yum:

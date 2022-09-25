@@ -1,0 +1,4 @@
+---
+repo_name: AnyDesk Fedora rawhide - stable
+repo_baseurl: http://rpm.anydesk.com/rhel/8/$basearch/
+repo_gpgkey: https://keys.anydesk.com/repos/RPM-GPG-KEY

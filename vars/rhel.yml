@@ -1,0 +1,4 @@
+---
+repo_name: AnyDesk RHEL - stable
+repo_baseurl: http://rpm.anydesk.com/rhel/$releasever/$basearch/
+repo_gpgkey: https://keys.anydesk.com/repos/RPM-GPG-KEY

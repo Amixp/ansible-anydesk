@@ -6,7 +6,7 @@
     - "{{ ansible_distribution | lower }}_{{ ansible_distribution_version | lower }}.yml"
     - "{{ ansible_distribution | lower }}.yml"
     - "{{ ansible_os_family | lower }}.yml"
-    - "empty.yml"
+    - "default.yml"
 
 - include_tasks: "{{ item }}"
   with_first_found:

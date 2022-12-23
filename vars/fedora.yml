@@ -1,4 +1,5 @@
 ---
 repo_name: AnyDesk Fedora - stable
-repo_baseurl: http://rpm.anydesk.com/fedora/$releasever/$basearch/
+repo_baseurl: http://rpm.anydesk.com/fedora/$basearch/
 repo_gpgkey: https://keys.anydesk.com/repos/RPM-GPG-KEY
+

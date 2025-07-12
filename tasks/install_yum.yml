@@ -6,11 +6,13 @@
     - "{{ ansible_distribution | lower }}_{{ ansible_distribution_release | lower }}.repo"
     - "{{ ansible_distribution | lower }}.repo"
     - "repo.j2"
+  become: true
 
 - name: Install AndyDesk
   yum:
     name: anydesk
     state: present
   ignore_errors: "{{ ansible_check_mode }}"
+  become: true
 
 

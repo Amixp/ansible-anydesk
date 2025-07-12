@@ -6,8 +6,10 @@
     - "{{ ansible_distribution | lower }}_{{ ansible_distribution_release | lower }}.repo"
     - "{{ ansible_distribution | lower }}.repo"
     - "repo.j2"
+  become: true
 
 - name: Install AndyDesk
+  become: true
   dnf:
     name: anydesk
     state: present
